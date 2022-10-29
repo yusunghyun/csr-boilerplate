@@ -1,46 +1,40 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Folder Structure
 
-### `npm test`
+- 공통적으로 지향하는 내부 폴더 패턴입니다. 없다면 안만들어도 됩니다.
+  - components // 부모 폴더에 속하는 컴포넌트
+  - hooks // 부모 폴더에 속하는 훅
+  - utils // 부모 폴더에 속하는 function, type ...
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+- src
+  - Common // 도메인에 종속되지 않은 모듈들 입니다.
+    - components
+    - hooks
+    - utils
+  - pages //
+    - Shared // 두번 이상 사용되는 공용이 아닌 모듈을 모아둔 곳 입니다.
+      - components
+      - hooks
+      - utils
+    - [Features] // 해당 도메인에서만 사용됩니다.
+      - components
+      - hooks
+      - utils
+  - store // 전역 변수를 관리하는 폴더입니다.
+  - Router.tsx // pages/ 와 1:1 구조로된 라우트들이 있습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+분업 시 각 도메인별로 자유롭고 독립적이게 작업할 수 있는 장점이라 생각하여 설계한 구조입니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 라이브러리
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- emotion
+- react-router-dom
+- @types/\*
+- eslint
+- prettier

@@ -1,15 +1,15 @@
 // @ts-nocheck
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Ready, Game, Result, Ranking } from 'pages';
+import { Feature3, Feature1, Feature4, Feature2 } from 'pages';
 
 export const Router = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Ready />} />
-        <Route path='/game' element={<Game />} />
-        <Route path='/result' element={<Result />} />
-        <Route path='/ranking' element={<Ranking />} />
+        <Route path='/' element={<Feature1 />} />
+        <Route path='/feature2' element={<Feature2 />} />
+        <Route path='/feature3' element={<Feature3 />} />
+        <Route path='/feature4' element={<Feature4 />} />
       </Routes>
     </BrowserRouter>
   );

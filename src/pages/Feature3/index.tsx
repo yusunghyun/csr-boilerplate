@@ -3,19 +3,20 @@ import { VFC } from 'Common/utils';
 import { useInputs } from 'Common/hooks';
 import { Button, Input, Layout } from 'Common/components';
 import { useNavigate } from 'react-router/dist';
+import { GameInformation } from 'pages/Shared';
 
-const INITIAL_FORMS = {
+const INITIAL_FORMS: GameInformation = {
   row: '1',
   column: '1',
   mole: '1',
 };
 
-export const Ready: VFC = () => {
+export const Feature3: VFC = () => {
   const navigate = useNavigate();
   const { inputs, handleChange } = useInputs(INITIAL_FORMS);
 
   const handlePress: MouseEventHandler<HTMLButtonElement> = () => {
-    navigate('./game');
+    navigate('./feature3', { state: { ...inputs } });
   };
 
   return (
